@@ -1,5 +1,5 @@
 /*Styles for twovies*/
-
+@import url("fonts.css");
 html {
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: #f3f5f6;
@@ -11,15 +11,21 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: rgb(77, 87, 109);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*background-color: rgb(77, 87, 109);*/
+  background-color:rgb(27, 27, 36);
+  font-family: "Corbel","Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   color: #000000;
   height:600px;
 }
 
+
+/* Container which holds the movie grid */
 body #movieContainer {
-  background-color:#5794c7;
+  background-color:transparent;
+  background-image:-moz-linear-gradient(50% 0%, rgb(45, 45, 70) 0%, rgb(28, 28, 44) 100%);
+  color:rgb(122, 175, 255);
+  box-shadow:-moz-linear-gradient(50% 0%, rgb(45, 45, 70) 0%, rgb(28, 28, 44) 100%);
   border: 2px;
   margin-right:5px;
   margin-left:5px;
@@ -29,6 +35,7 @@ body #movieContainer {
   border-radius:6px;
 }
 
+/* the movie thumbnails container within movie container */
 body #movieContainer #photoContainer
 {
  margin-left:12%;
@@ -38,6 +45,8 @@ body #movieContainer #photoContainer
  overflow:auto;
 }
 
+
+/* Ajax loader*/
 #loading {
   position: fixed;
   top:50%;
@@ -48,23 +57,125 @@ body #movieContainer #photoContainer
   display:none;
   }
 
+.homeImg img{
+  position: fixed; /*if absolute, it does not scroll with the page,if fixed,the page scrolls but the image is fixed*/
+  top:20%;
+  left:5%;
+}
+
+/* class which is supposed to contain movie image and the cast info */
+.movieInfo {
+  background-color:transparent;
+  background-image:-moz-linear-gradient(50% 0%, rgb(45, 45, 70) 0%, rgb(28, 28, 44) 100%);
+  color:rgb(122, 175, 255);
+  box-shadow:-moz-linear-gradient(50% 0%, rgb(45, 45, 70) 0%, rgb(28, 28, 44) 100%); 
+  border: 5px;
+  display:inline-block;
+  overflow:hidden;
+  height:30%;
+  border-radius:16px;
+}
+
+/* the movie image on the left */
+.singlePhoto img {
+ display: block; 
+ width: 200px; 
+ height: 100%; 
+ max-width: 100%;
+ border: 0px solid #fff;
+}
+
+/*The movie name and cast details on the right*/
+.movieDetails {
+ margin-left: 250px;
+ display:inline;
+}
+
+/*The headings for movie details like Title ,Cast */
+.heading {
+    font-size:20px;
+    color:rgb(255, 225, 169);  
+    font-family:'Corbel';  
+}
+
+/* The actual movie name and cast info */
+.info {
+    font-family:"Corbel";
+    font-weight: 300;
+    color:rgb(162, 146, 255);
+    background-color:transparent;
+    font-size:14px;
+}
+
+/*Class containing tweet image and the relevant tweet */
+
+.tweetInfo {
+  background-color:transparent;
+  background-image:-moz-linear-gradient(50% 0%, rgb(45, 45, 70) 0%, rgb(28, 28, 44) 100%);
+  color:rgb(122, 175, 255);
+  box-shadow:-moz-linear-gradient(50% 0%, rgb(45, 45, 70) 0%, rgb(28, 28, 44) 100%);
+  border: 5px;
+  display:inline-block;
+  overflow:hidden;
+  height:14.5%;
+  border-radius:16px;
+}
+
+/*The twitter profile image*/
+.tweetImage a img {
+ float:left;
+ display: block; 
+ width: 70px; 
+ height: 60px; 
+ max-width: 100%;
+ border: 0px solid;
+ background:  rgb(164, 183, 215);
+ border-radius: 76px;
+ margin-left: 10px;
+ margin-top:8px;
+}
+
+/*The right part to contain tweet*/
+.tweetText
+{
+ margin-left: 40px;
+ display:block;
+}
+
+/* The actual tweet*/
+.tweetContent
+{
+ font-family:"Corbel";
+ font-weight: 300;
+ color:rgb(162, 146, 255);
+ background-color:transparent;
+ font-size:12px;
+}
+
 .twoviesBanner {
  margin-left:5px;
+ color:
+}
+
+.twitterProfileLink {
+ color:rgb(255, 225, 169);;
 }
 
 h1 {
   font-size: 3.0em;
+  font-family:"Corbel";
+  color:rgb(162, 146, 255);
+  background-color:transparent;
 }
 
 h2,
 .h2 {
-  font-family:'Oswald',Helvetica, Arial, serif;
+  font-family:"Corbel";
   font-weight: 300;
- 
-  /*font-size: 3.5em;*/
+  color:rgb(162, 146, 255);
+  background-color:transparent;
   margin-bottom: 0.75em;
-  font-size: 16px;
-  /*font-size: 3.5rem;*/
+  font-size: 14px;
   line-height: 1.2;
 }
 
@@ -74,6 +185,7 @@ h2,
 
 .photo {width: 100%; margin-bottom: 4%; position: relative;}
 .photo img {display: block; width: 150px; height: 150px; max-width: 100%;border: 2px solid #fff;}
+.singlePhoto img {display: block; width: 200px; height: 100%; max-width: 100%;}
 .caption {position: absolute; bottom: 2px; left: 2px;background: #000; color: #fff; width: 100%; opacity: 0; -o-transition:.5s; -ms-transition:.3s; -moz-transition:.3s; -webkit-transition:.3s; transition:.3s;}
 .photo:hover .caption,
 .photo:focus .caption {opacity: 0.7;}
@@ -132,24 +244,69 @@ h2,
    background-color:rgb(77, 87, 109);
 }
 
-#footer{  
-    clear:both;  
-    font-size:75%;  
-    font-family:sans-serif;  
-    color:#333;  
-    border-top:solid 1px #69a;
-    left:50;
-    text-align:center;
-}
-
-
 @media only screen and (min-width: 600px) {
   header h1, header h2 {display: inline; margin-bottom: 0;}
   h1 {font-size:5.5em; font-size: 5.5rem;}
   .photo {float: left; width:25%; margin-right: 3%; }
   .photo:nth-child(2n+1) {margin-right:0;}
+  .singlePhoto{float:left ;width: 100px; height: 100%; margin-bottom:1%;}
+  .singlePhoto img{ width: 80px; height: 100%;}
+
+  body #movieContainer {
+    max-width:95%;
+    width:auto;
+    margin-right:2.5%;
+    margin-left:2.5%;
+  }
+  .movieInfo {
+    max-width:95%;
+    width:60%;
+    margin-right:20%;
+    margin-left:20%;
+  }
+  .homeImg {
+    margin-left:10%;
+    border-radius:10px;
+  }
+  .tweetInfo {
+    max-width:95%;
+    width:45%;
+    margin-right:27.5%;
+    margin-left:27.5%;
+  }
 }
 @media only screen and (min-width: 768px) {
+  header h1, header h2 {display: inline; margin-bottom: 0;}
+  h1 {font-size:4.0em; font-size: 4.0rem;}
+  body #movieContainer {
+    max-width:95%;
+    width:auto;
+    margin-right:2.5%;
+    margin-left:2.5%;
+  }
+  .movieInfo {
+    max-width:95%;
+    width:60%;
+    margin-right:20%;
+    margin-left:20%;
+  }
+  .homeImg {
+    margin-left:10%;
+    border-radius:10px;
+  }
+  .tweetInfo {
+    max-width:95%;
+    width:45%;
+    margin-right:27.5%;
+    margin-left:27.5%;
+  } 
+  
+  .twoviesBanner {margin-left:2.5%;}
+  .photo { width: 150px; height: 150px; margin-bottom: 4%; margin-right: 4%; }
+  .singlePhoto{float:left ;width: 200px; height: 100%; margin-bottom:1%;}
+  .singlePhoto img{ width: 180px; height: 100%;}
+  .photo:nth-child(2n+1) {margin-right: 4%;}
+  .photo:nth-child(3n+1) {margin-right:4%;}
 
 }
 @media only screen and (min-width: 992px) {
@@ -161,8 +318,27 @@ h2,
     margin-right:2.5%;
     margin-left:2.5%;
   }
+  .movieInfo {
+    max-width:95%;
+    width:60%;
+    margin-right:20%;
+    margin-left:20%;
+  }
+  .homeImg {
+    margin-left:10%;
+    border-radius:10px;
+  }
+  .tweetInfo {
+    max-width:95%;
+    width:45%;
+    margin-right:27.5%;
+    margin-left:27.5%;
+  } 
+  
   .twoviesBanner {margin-left:2.5%;}
   .photo { width: 150px; height: 150px; margin-bottom: 4%; margin-right: 4%; }
+  .singlePhoto{float:left ;width: 200px; height: 100%; margin-bottom:1%;}
+  .singlePhoto img{ width: 180px; height: 100%;}
   .photo:nth-child(2n+1) {margin-right: 4%;}
   .photo:nth-child(3n+1) {margin-right:4%;}
 }

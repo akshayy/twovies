@@ -28,14 +28,14 @@
            $("#loading").hide();
          }
         });//end of ajax call
-    });         
+    });       
   });  
   
 %br
 %div{:id =>"centeredmenu"}
   %ul
     %li
-      %a{:href => "#"} In Theaters
+      %a.active{:href => "/"} In Theaters
     %li
       %a{:href => "#"} Upcoming
     %li
@@ -44,10 +44,10 @@
   %div{:id =>"photoContainer"}
     -@movies.each do |movie|
       .photo
-        %a{:href =>"/"} 
-          %img{:src => movie.posters.profile}
+        %a{:href => "/load_tweets/#{movie.movie_id}"}
+          %img{:src => movie.img_url}
             .caption
-              %p=movie.title
+              %p=movie.movie_name
 %br
 %br
 %div{:id => "loading"}
