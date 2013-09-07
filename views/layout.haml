@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %title Twovies
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    
+    %link{:href => "/css/styles.css", :media => "screen", :rel => "stylesheet"}
+    
+    %script{:src => "/js/jquery-2.0.3.js"}
+    
+    %script{:src => "/js/bootstrap.min.js"}
+    
+    %script{:src => "/js/respond.js"}
+  %body
+    %br
+    %header{:role => "banner"}
+      .twoviesBanner
+        %h1 Twovies 
+        %h2  Hollywood movie discussions on twitter brought together.
+    
+    =yield
+    
+    %footer
+      %span{:style=>'text-align: center'} 
+        %h2 Made @Pune
+      

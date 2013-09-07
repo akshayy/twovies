@@ -1,2 +1,2 @@
-require './app/twovies-app.rb'
+require './twovies-app.rb'
 run Sinatra::Application

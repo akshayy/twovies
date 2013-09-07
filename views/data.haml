@@ -1,0 +1,6 @@
+-@movies_list.each do |movie|
+  .photo
+    %a{:href =>"/load_tweets/#{movie.movie_id}"} 
+      %img{:src => movie.img_url}
+        .caption
+          %p=movie.movie_name
