@@ -19,7 +19,7 @@
 %br
 %br
 %br
--@tweets.each do |tweet|
+-@tweets.results.each do |tweet|
   .tweetInfo
     .tweetImage
       %a{:href=>"http://twitter.com/#{tweet.from_user}" ,:target =>"_blank"}

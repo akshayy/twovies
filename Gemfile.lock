@@ -62,21 +62,21 @@ GEM
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     fastercsv (1.5.5)
-    haml (4.0.3)
+    haml (4.0.4)
       tilt
-    json (1.8.0)
-    json_pure (1.8.0)
-    multi_json (1.7.9)
+    json (1.8.1)
+    json_pure (1.8.1)
+    multi_json (1.8.2)
     multipart-post (1.2.0)
-    pg (0.16.0)
+    pg (0.17.0)
     rack (1.5.2)
-    rack-protection (1.5.0)
+    rack-protection (1.5.1)
       rack
     rottentomatoes (1.1.0)
       deepopenstruct (>= 0.1.2)
       json
     simple_oauth (0.2.0)
-    sinatra (1.4.3)
+    sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
@@ -99,10 +99,10 @@ DEPENDENCIES
   data_mapper
   dm-postgres-adapter
   dm-sqlite-adapter
-  haml
-  json
+  haml (~> 4.0.3)
+  json (~> 1.8.1)
   pg
-  rottentomatoes
-  sinatra
-  thin
-  twitter
+  rottentomatoes (~> 1.1.0)
+  sinatra (~> 1.4.3)
+  thin (~> 1.5.1)
+  twitter (~> 4.8.1)

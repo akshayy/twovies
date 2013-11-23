@@ -14,8 +14,8 @@ Rotten.api_key = "5hb5muvr3bhth3gbzsr6xeqn"
 Twitter.configure do |config|
   config.consumer_key = "e756IwG9nog9CtllDZ9tkQ"
   config.consumer_secret = "yG3NNjC9rbipWGPavvhDiipYI5qpMRX7JL6JigZDB8"
-  config.oauth_token = "18181559-uVQ2Kf1pvrsoAhBR3aNRkbsPEHbUmtVOi5t9U06M8"
-  config.oauth_token_secret = "ICF43ycm2nIqKHWyhEpbWIMFEjkh9uJIikyoavH5eI"
+  config.oauth_token = "18181559-YmfQJYitYMEsvP7KYEI5yCaMEtAouE7pdvh5sCxLy"
+  config.oauth_token_secret = "WHm671k1N6vG7bDoFiYzPeKWVxJWal5VO8sy6uXjoxSmj"
 end
 
 
@@ -150,17 +150,15 @@ begin
 
   search_term = search_term + " " + "movie"  
   @tweets = Twitter.search(search_term, :result_type => "recent", :count => "500") 
-
-  puts "tweets fetched"  
-  if @tweets == nil || @tweets.count==0
+  
+  if @tweets == nil
    puts "tweets nil" 
    raise "no tweets found"
   end
   
 rescue Exception => ex
-  haml:error
+  return haml:error
 end
-
   haml :tweets
 
 end
